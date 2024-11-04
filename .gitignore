@@ -25,3 +25,4 @@ dist-ssr
 
 host/node_modules
 remote/node_modules
+header/node_modules

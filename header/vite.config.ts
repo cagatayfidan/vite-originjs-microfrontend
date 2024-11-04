@@ -1,4 +1,5 @@
 
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
@@ -8,13 +9,13 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "remote_app",
+      name: "header",
       filename: "remoteEntry.js",
       exposes: {
-        './Button': './src/components/Button'
+        './Header': './src/components/Header'
       },
-      shared: ['react','react-dom']
-    })
+      shared: ['react','react-dom'],
+    }),
   ],
   server:{
     open:true
@@ -23,6 +24,6 @@ export default defineConfig({
     modulePreload: false,
     target: 'esnext',
     minify: false,
-    cssCodeSplit: false
+    cssCodeSplit: false,
   }
 })
